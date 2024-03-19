@@ -18,7 +18,8 @@
 		"tabs",
 		"clipboardRead",
 		"clipboardWrite",
-		"storage"
+		"storage",
+		"activeTab"
 
 	],
 	"action": {

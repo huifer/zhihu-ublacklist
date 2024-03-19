@@ -23,7 +23,8 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
 });
 
 // 监听标签页更新事件
-chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
+    console.log(changeInfo.status)
     // 检查页面是否已经加载完成
     if (changeInfo.status === 'complete') {
         // 在页面加载完成后执行你的操作
