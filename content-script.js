@@ -1,6 +1,7 @@
 function remove(request, questionID) {
     var listItems = document.querySelectorAll('.List-item');
 
+    var textContent = document.getSelection().focusNode.textContent;
     listItems.forEach(function (item) {
         var answerItems = item.querySelectorAll('.ContentItem.AnswerItem');
         answerItems.forEach(function (answerItem) {
@@ -26,7 +27,7 @@ function remove(request, questionID) {
                 }
             });
 
-            if (authorData.name == request.selectedText) {
+            if (authorData.name == textContent) {
                 // 将问题 ID 和作者数据存储到插件中
                 chrome.storage.sync.get(['removedItems'], function (result) {
                     var removedItems = result.removedItems || [];
