@@ -73,6 +73,26 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.message === "page complete") {
+
+        var elements = document.querySelectorAll('.Pc-Business-Card-PcTopFeedBanner');
+
+        elements.forEach(function (element) {
+            element.remove();
+        });
+        var elements = document.querySelectorAll('.Pc-card.Card');
+        elements.forEach(function (element) {
+            element.remove();
+        });
+        var elements = document.querySelectorAll('.TopstoryItem--advertCard');
+        elements.forEach(function (element) {
+            element.remove();
+        });
+        var elements = document.querySelectorAll('.Business-Card-PcRightBanner-link');
+        elements.forEach(function (element) {
+            element.remove();
+        });
+
+
         console.log(request)
         var currentUrl = document.URL;
         console.log("当前网页的URL是：" + currentUrl);
@@ -149,3 +169,9 @@ function c(u) {
 }
 
 
+a()
+
+function a() {
+    console.log("=1231=31=231=1231=31=231=1231=31=231=1231=31=231=1231=31=231")
+    console.log(document);
+}
