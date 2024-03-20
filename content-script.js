@@ -1,6 +1,7 @@
 function f1(request, questionID) {
     var listItems = document.querySelectorAll('.List-item');
 
+    var textContent = document.getSelection().focusNode.textContent;
     listItems.forEach(function (item) {
         var answerItems = item.querySelectorAll('.ContentItem.AnswerItem');
         answerItems.forEach(function (answerItem) {
@@ -26,7 +27,7 @@ function f1(request, questionID) {
                 }
             });
 
-            if (authorData.name.includes(request.selectedText)) {
+            if (authorData.name == textContent) {
                 // 将问题 ID 和作者数据存储到插件中
                 chrome.storage.sync.get(['removedItems'], function (result) {
                     var removedItems = result.removedItems || [];
@@ -242,11 +243,6 @@ function c(u) {
 }
 
 
-// a()
-//
-// function a() {
-//     console.log("=1231=31=231=1231=31=231=1231=31=231=1231=31=231=1231=31=231")
-// }
 
 window.addEventListener('scroll', function (event) {
     // 在页面滚动时执行你的操作
