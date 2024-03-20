@@ -12,7 +12,6 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
     if (info.menuItemId == "hello") {
 
 
-        debugger
         chrome.tabs.sendMessage(tab.id, {
             message: 'Custom ContextMenus Action',
             menuItemId: info.menuItemId,
